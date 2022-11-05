@@ -104,7 +104,7 @@ example_img_names = get_img_list(example_folder_path)
 #container for title and uploader
 with st.container() as title_container:
     st.title("Which indian dance?")
-    st.text(description)
+    st.caption(description)
     uploaded_file = get_upload()
     upload_predict = st.button("Which dance?", on_click=display_new_prediction, args = (uploaded_file,))    
 
