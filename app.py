@@ -95,12 +95,23 @@ def display_new_prediction(file):
     else:
         display_container.write("Please upload a file")
 
+
+description = '''
+		The art and cultural heritage of India is unmatched in its diversity. It is often the case that an 
+		artform in one part of the country is completely unknown to people from another part of the country.
+		
+		This app can distinguish between 8 major indian dance forms - Mohiniyattam, Odissi, Bharatanatyam, Kathakali,
+		 Kuchipudi, Sattriya Nritya, Kathak' and Manipuri Raas Leela. 
+		 
+		Next time you are confused about an indian dance form, snap a picture and upload here. 		
+		'''
 # get the file names of example images
 example_img_names = get_img_list(example_folder_path)
 
 #container for title and uploader
 with st.container() as title_container:
     st.title("Which indian dance?")
+    st.title(description)
     uploaded_file = get_upload()
     upload_predict = st.button("Which dance?", on_click=display_new_prediction, args = (uploaded_file,))    
 
